@@ -1,5 +1,6 @@
 package pl.sdacademy.jdbc;
 
+
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -34,8 +35,7 @@ public class AddBook {
         int onStock = scanner.nextInt();
 
 
-        Connection connection = Database.getConnection();
-        PreparedStatement statement1 = connection.prepareStatement("insert into books values (?,?,?,?,?,?,?,?,?)");
+        PreparedStatement statement1 = Database.getConnection().prepareStatement("insert into books values (?,?,?,?,?,?,?,?,?)");
 
         statement1.setString(1, title);
         statement1.setString(2, author);
@@ -48,5 +48,7 @@ public class AddBook {
         statement1.setInt(9, onStock);
         statement1.execute();
         statement1.close();
+
+        Database.closeConnection();
     }
 }

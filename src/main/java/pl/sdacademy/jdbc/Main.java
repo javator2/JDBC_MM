@@ -1,17 +1,13 @@
 package pl.sdacademy.jdbc;
 
 import java.sql.*;
-import java.text.ParseException;
 
 public class Main {
 
-    public static void main(String[] args) throws ParseException, SQLException {
+    public static void main(String[] args) throws SQLException {
 
-        Database.loadConnection();
-        AddBook.addNewBook();
-        Database.closeConnection();
-
-    }
+     AddBook.addNewBook();
+     }
 }
 
 //        Connection connection = null; // połączenie z bazą danych
